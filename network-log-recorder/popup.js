@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.getElementById("toggle-tracking");
   const downloadButton = document.getElementById("download-har");
-  const clearButton = document.getElementById("clear-calls");
   const ai_load_case = document.getElementById("ai_load_case");
 
   // Check the initial state of the toggle button
@@ -41,10 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
         URL.revokeObjectURL(url);
       }
     });
-  });
-
-  clearButton.addEventListener("click", () => {
-    chrome.storage.local.set({ calls: [] }, loadCalls);
   });
 
   ai_load_case.addEventListener("click", () => {
@@ -110,6 +105,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  updateToggleButton();
 });
   
