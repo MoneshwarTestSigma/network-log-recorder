@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Network Call Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    #network-calls {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .call {
+      margin-bottom: 10px;
+      padding: 5px;
+      border-bottom: 1px solid #ddd;
+    }
+    button {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Network Call Tracker</h2>
+  <button id="toggle-tracking">Disable Tracking</button>
+  <button id="download-har">Download HAR File</button>
+  <button id="clear-calls">Clear Calls</button>
+  <script src="popup.js"></script>
+</body>
+</html>
