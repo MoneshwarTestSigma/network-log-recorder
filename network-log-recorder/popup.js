@@ -62,13 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
           // 2. Prepare the Payload
           const payload = new FormData();
           payload.append(
-            "file",
+            "fileContent",
             new Blob([JSON.stringify(harLog)], { type: "application/json" }),
             "networklog.har"
           );
 
           // 3. Send the POST Request
-          const endpointURL = "http://localhost:5050/check"; // Replace with your actual endpoint
+          const versionId = "5"
+          const endpointURL = "http://dev.testsigma.com/load_clusters/"+versionId+"/create_by_ai/"; // Replace with your actual endpoint
           fetch(endpointURL, {
             method: "POST",
             body: payload,
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
               if (data) {
                 console.log("Response from server:", data);
               }
+              window.alert("Our AI minions are on it! Sit tight, and we’ll email you when the magic is done.");
             })
             .catch((fetchError) => {
               console.error("Error during fetch:", fetchError);
